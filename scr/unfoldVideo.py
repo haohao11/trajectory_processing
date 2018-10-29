@@ -72,13 +72,13 @@ def main():
     dirname = '../video'
     print(cv2.__version__)
     # Playing video from file:
-    vidcap = cv2.VideoCapture(os.path.join(dirname, 'DSCF1394.MOV'))
+    vidcap = cv2.VideoCapture(os.path.join(dirname, 'sharedSpace_PlatzDerWeltausstellungHannover_3.mp4'))
     #vidcap = cv2.VideoCapture('DSCF1394.MOV')
     currentFrame = 0
     slot = 0
     vidcap.set(cv2.CAP_PROP_POS_MSEC,2000)
     
-    data_dir ='../DSCF1394'
+    data_dir ='../sharedSpace_PlatzDerWeltausstellungHannover_3'
     try:
         if not os.path.exists(data_dir):
             os.makedirs(data_dir)

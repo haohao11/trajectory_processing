@@ -23,7 +23,7 @@ import os
 print('-----Loading Calibration Data: cameraMatrix, distCoeffs.....')
 
 
-calibrationData = np.load('../huanong_calibration/calibration_data.npz')
+calibrationData = np.load('../oskar_cali/calibration_data.npz')
 
 distCoeffs   = calibrationData['distCoeffs']
 cameraMatrix = calibrationData['cameraMatrix']
@@ -33,7 +33,7 @@ calibrationData.close()
 
 # grab all images 
 # images = glob.glob('ImgSamples/120/*.png')
-images = glob.glob('../DSCF1394/*.jpg')
+images = glob.glob('../sharedSpace_PlatzDerWeltausstellungHannover_3/*.jpg')
 
 # loop through all the available images, to save object points and image points of the corners
 print("-----Image undistortion in process....")
@@ -47,12 +47,12 @@ for i, fname in enumerate(images):
      are filled with zeros (black color).'''
 	
 	# making a new directory to strore undistorted images
-	dirname = '../DSCF1394_Undistorted'
+	dirname = '../Undistorted_sharedSpace_PlatzDerWeltausstellungHannover_3'
 	if not os.path.exists(dirname):
 		os.mkdir(dirname)
 	
 	# save the undistorted image to the new diretory
-	cv2.imwrite(os.path.join(dirname,'Undistorted_%05d.png' %i), undistorted_img)
+	cv2.imwrite(os.path.join(dirname,'Undistorted_%05d.jpg' %i), undistorted_img)
 	#cv2.imshow('Undistorted Image %s' % fname, undistorted_img)
 	cv2.waitKey(500)
 cv2.destroyAllWindows()

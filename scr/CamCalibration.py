@@ -25,8 +25,12 @@ print("Numpy Version is:", np.__version__)
 print("OpenCV Version is:", cv2.__version__)
 
 # define the number of squares on the chess board (width and height)
-s_w = 9
-s_h = 6
+# =============================================================================
+# s_w = 9
+# s_h = 6
+# =============================================================================
+s_w = 13
+s_h = 8
 # so the pattern of corners is
 patternSize = (s_w, s_h)
 # the window size for refining the coordinates of corners
@@ -52,7 +56,7 @@ imgpoints = []
 
 # grab all images 
 #images = glob.glob('ImgSamples/120/*.png')
-images = glob.glob('../huanong_calibration/*.jpg')
+images = glob.glob('../oskar_cali/*.jpg')
 
 # loop through all the available images, to save object points and image points of the corners
 print("-----Corner refining in process....")	
@@ -109,7 +113,7 @@ print(distCoeffs)
 
 print('-----Saving the calibration results into a binary file...')
 
-np.savez('../huanong_calibration/calibration_data', RMS = ret, distCoeffs=distCoeffs, cameraMatrix=cameraMatrix)
+np.savez('../oskar_cali/calibration_data', RMS = ret, distCoeffs=distCoeffs, cameraMatrix=cameraMatrix)
 
 if ret<=1.0:
 	print('-----Calibration Done! The results are AWSOME!')
