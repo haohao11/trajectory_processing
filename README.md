@@ -27,4 +27,4 @@
 **This is the last step to plot the trajectories**
 * Run **plot_trajectory.py** to visualize the extracted trajectories
 
-![Camera calibration](https://github.com/SocialCars/Hao_TrajectoryProcessing/blob/master/huanong_calibration/00023.jpg)
+![Camera calibration](https://github.com/haohao11/trajectory_processing/blob/master/huanong_calibration/00023.jpg)
