@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu May  3 15:05:11 2018
-This is the modular for converting from one coordinate syste to another coordinate system using affine transformation
+This is the modular for converting from one coordinate system to another coordinate system using perspective transformation
 @author: cheng
 """
 import cv2
